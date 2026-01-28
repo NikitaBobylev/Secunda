@@ -49,25 +49,10 @@ X-API-Key: <ваш_ключ>
 
 ## Docker
 ```bash
+cp .env.example .env
 docker compose up --build
 ```
 
 При старте контейнера автоматически выполняются миграции и сиды.
 
 После запуска доступ по адресу `http://localhost/` (Nginx).
-
-## Локальный запуск без Docker
-```bash
-uv venv
-source .venv/bin/activate
-uv pip install -r requirements.txt
-cp .env.example .env
-mkdir -p data logs
-alembic upgrade head
-python -m app.seed
-uvicorn main:app --reload
-```
-
-Проверь `.env` для локального запуска:
-- `SECUNDA_DATABASE_URL=sqlite:///./data/secunda.db`
-- `SECUNDA_LOG_PATH=logs/app.log`
