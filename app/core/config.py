@@ -4,11 +4,14 @@ class Settings(BaseSettings):
     database_url: str = "sqlite:///./secunda.db"
     async_database_url: str | None = None
     api_key: str = "changeme"
+    log_path: str = "logs/app.log"
+    pythonpath: str | None = None
 
     model_config = SettingsConfigDict(
         env_prefix="SECUNDA_",
         env_file=".env",
         env_file_encoding="utf-8",
+        extra="allow"
     )
 
     def get_async_database_url(self) -> str:

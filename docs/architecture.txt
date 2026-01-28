@@ -1,0 +1,42 @@
+repository onion architecture
+
+app/
+    api/
+        v1/
+            router.py
+            routers/
+                activities.py
+                buildings.py
+                organizations.py
+    core/
+        config.py
+        logging.py
+        security.py
+    db/
+        base.py
+        session.py
+    models/
+        activity.py
+        building.py
+        organization.py
+        phone.py
+    repositories/
+        activity.py
+        building.py
+        organization.py
+    schemas/
+        activity.py
+        building.py
+        organization.py
+        pagination.py
+    services/
+        activities.py
+        buildings.py
+        organizations.py
+
+alembic/
+    env.py
+    versions/
+
+alembic.ini
+main.py
