@@ -4,7 +4,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1.router import api_router
 from app.core.logging import setup_logging
 
-setup_logging()
+def on_startup():
+    setup_logging()
+
 app = FastAPI(
     title="Secunda Directory API",
     description=(
@@ -12,6 +14,7 @@ app = FastAPI(
         "Все запросы требуют заголовок `X-API-Key` со статическим ключом."
     ),
     version="0.1.0",
+    on_startup=[on_startup]
 )
 app.add_middleware(
     CORSMiddleware,
