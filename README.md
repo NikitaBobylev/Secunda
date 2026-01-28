@@ -4,14 +4,12 @@ REST API для справочника организаций, зданий и �
 
 ## Быстрый старт (uv)
 ```bash
-uv venv
-source .venv/bin/activate
-uv pip install -r requirements.txt
+uv sync
 cp .env.example .env
 mkdir -p data logs
-alembic upgrade head
-python -m app.seed
-uvicorn main:app --reload
+uv run alembic upgrade head
+uv run python -m app.seed
+uv run uvicorn main:app --reload
 ```
 
 ## Переменные окружения
