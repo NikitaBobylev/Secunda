@@ -50,7 +50,7 @@ X-API-Key: <ваш_ключ>
 ## Docker
 ```bash
 cp .env.example .env
-docker compose up --build
+docker compose up --build -d
 ```
 
 При старте контейнера автоматически выполняются миграции и сиды.
