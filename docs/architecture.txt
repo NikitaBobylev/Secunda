@@ -39,4 +39,10 @@ alembic/
     versions/
 
 alembic.ini
+Dockerfile
+docker-compose.yml
+nginx/
+    default.conf
+scripts/
+    entrypoint.sh
 main.py
